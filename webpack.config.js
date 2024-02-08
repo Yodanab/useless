@@ -1,6 +1,4 @@
-/** @format */
-
-const UselessModule = require("./plugin");
+const UselessModule = require("./src/Useless");
 
 module.exports = {
   entry: "./src/index.js",
