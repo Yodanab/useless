@@ -1,15 +1,8 @@
-/** @format */
-
 const fs = require("fs");
 const path = require("path");
 
 class UselessModule {
-  constructor(options = {}) {
-    const defaultExcludedFolders = [
-      "node_modules",
-      "public",
-      "webpack",
-    ];
+  constructor(options = { excludedFolders: [], rootUrl: [] }) {
     this.directoryPath = options.rootUrl.map(
       (url) => path.resolve(__dirname, url)
     );
@@ -17,8 +10,10 @@ class UselessModule {
     this.unUsedFiles = new Set();
     this.usedExportsFun = [];
     this.excludedFolders = [
-      ...defaultExcludedFolders,
-      ...(options.excludeFolders || []),
+      "node_modules",
+      "public",
+      "webpack",
+      ...options.excludedFolders,
     ];
   }
 
