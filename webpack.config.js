@@ -4,7 +4,7 @@ module.exports = {
   entry: "./src/index.js",
   plugins: [
     new UselessModule({
-      excludeFolders: ["dist"],
+      skipFolders: ["dist"],
       rootUrl: ["./src", "./library"],
     }),
   ],
