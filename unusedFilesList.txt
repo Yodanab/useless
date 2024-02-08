@@ -1,0 +1,11 @@
+5 Unused Files Found
+
+*Please consider deleting these files from your project*
+
+List of Unused Files:
+
+C:/projects/unused/src/not.js
+C:/projects/unused/src/testFolder/fileInFolder.js
+C:/projects/unused/src/testFolder/folderInsideFolder/moreUslesFile.js
+C:/projects/unused/library/folder/meshi.js
+C:/projects/unused/library/philp.js
