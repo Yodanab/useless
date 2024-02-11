@@ -1,3 +1,5 @@
+/** @format */
+
 const UselessModule = require("./src/Useless");
 
 module.exports = {
@@ -6,6 +8,7 @@ module.exports = {
     new UselessModule({
       skipFolders: ["dist"],
       rootUrl: ["./src", "./library"],
+      skipExtension: [".sun.js"],
     }),
   ],
 };
