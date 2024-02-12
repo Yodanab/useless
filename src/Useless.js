@@ -12,7 +12,6 @@ class UselessModule {
     this.directoryPath = rootUrl.map((url) =>
       path.resolve(__dirname, url)
     );
-
     this.unUsedFiles = new Set();
     this.excludedExtension = [...skipExtension];
     this.excludedFolders = [
@@ -50,12 +49,6 @@ class UselessModule {
   readFiles(dirPath) {
     if (!dirPath) return;
 
-    const folderName = path.basename(dirPath);
-
-    if (this.isFolderExcluded(folderName)) {
-      return;
-    }
-
     const stats = fs.statSync(dirPath);
 
     if (stats.isFile()) {
@@ -67,6 +60,11 @@ class UselessModule {
         this.unUsedFiles.add(filePath);
       }
     } else if (stats.isDirectory()) {
+      const folderName = path.basename(dirPath);
+      if (this.isFolderExcluded(folderName)) {
+        return;
+      }
+
       const filesAndFolders =
         fs.readdirSync(dirPath);
 
