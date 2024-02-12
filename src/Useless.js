@@ -10,7 +10,7 @@ class UselessModule {
     skipExtension = [],
   } = {}) {
     this.directoryPath = rootUrl.map((url) =>
-      path.resolve(process.cwd(), url)
+      path.resolve(__dirname, url)
     );
 
     this.unUsedFiles = new Set();
