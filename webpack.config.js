@@ -1,5 +1,3 @@
-/** @format */
-
 const UselessModule = require("./src/Useless");
 const path = require("path");
 
